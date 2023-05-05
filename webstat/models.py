@@ -3,11 +3,6 @@ from django.db import models
 class User(models.Model):
     user_id = models.IntegerField(primary_key=True)
     username = models.CharField(max_length=100)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    language_code = models.CharField(max_length=10)
-    is_bot = models.BooleanField()
-    date_joined = models.DateTimeField(auto_now_add=True)
 
 class Message(models.Model):
     id = models.IntegerField(primary_key=True)
