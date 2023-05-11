@@ -13,9 +13,9 @@ def upload_file(request):
         fs = FileSystemStorage(location=path)
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
-        addusers(myfile.name)
+        out = addusers(myfile.name)
         return render(request, 'upload.html', {
-            'uploaded_file_url': uploaded_file_url
+            'uploaded_file_url': out
         })
     return render(request, 'upload.html')
 
