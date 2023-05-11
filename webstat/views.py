@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 import os
-from webstat.algs import addusers
+from webstat.algs import uploaddb
+
 def upload_file(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
@@ -13,10 +14,12 @@ def upload_file(request):
         fs = FileSystemStorage(location=path)
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
-        addusers(myfile.name)
+        uploaddb(myfile.name)
+        os.remove(os.path.join(path, filename))
         return render(request, 'upload.html', {
             'uploaded_file_url': uploaded_file_url
         })
+
     return render(request, 'upload.html')
 
 def home(request):
