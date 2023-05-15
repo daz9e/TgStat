@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>File Uploaded</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}
+    123
+{% endblock %}
+
+{% block content %}
     <h2>File Uploaded Successfully!</h2>
     <p>Uploaded File URL: {{ uploaded_file_url }}</p>
-</body>
-</html>
+{% endblock %}
