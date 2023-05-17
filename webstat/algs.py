@@ -4,7 +4,8 @@ import json
 from webstat.models import Users, Chat, Messages
 from datetime import datetime
 from django.db import transaction
-
+from collections import Counter
+import re
 
 
 def uploaddb(filename):
@@ -88,6 +89,32 @@ def get_longest_message(filename):
         print(f"{i}. {user}: {message_info['longest_message']} (длина сообщения: {message_info['message_length']})")
         print(' ')
     return user_messages
+
+
+
+
+def get_top_words(filename,top_n):
+    path_to_file = os.path.join(settings.BASE_DIR, 'files', filename)
+    with open(path_to_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    messages = data.get("messages", [])
+    all_words = []
+
+    for message in messages:
+        if isinstance(message, dict) and 'text' in message:
+            text = message['text']
+            if isinstance(text, str):  # Проверка, что 'text' является строкой
+                words = re.findall(r'\b\w+\b', text.lower())  # Извлечение всех слов из текста сообщения
+                all_words.extend(words)
+
+    word_counts = Counter(all_words)
+    top_words = word_counts.most_common(top_n)
+
+    print(f"Топ {top_n} наиболее часто встречающихся слов:")
+    for i, (word, count) in enumerate(top_words, start=1):
+        print(f"{i}. Слово: {word}, Количество: {count}")
+
 
 
 
