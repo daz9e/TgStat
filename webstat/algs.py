@@ -6,7 +6,7 @@ from datetime import datetime
 from django.db import transaction
 from collections import Counter
 import re
-
+from collections import defaultdict
 
 def uploaddb(filename):
     path_to_file = os.path.join(settings.BASE_DIR, 'files', filename)
@@ -114,6 +114,25 @@ def get_top_words(filename,top_n):
     print(f"Топ {top_n} наиболее часто встречающихся слов:")
     for i, (word, count) in enumerate(top_words, start=1):
         print(f"{i}. Слово: {word}, Количество: {count}")
+
+def get_top_active_users(filename, top_n):
+    path_to_file = os.path.join(settings.BASE_DIR, 'files', filename)
+    with open(path_to_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    messages = data.get("messages", [])
+    user_message_counts = defaultdict(int)
+
+    for message in messages:
+        if isinstance(message, dict) and 'from' in message:
+            user = message['from']
+            user_message_counts[user] += 1
+
+    sorted_users = sorted(user_message_counts.items(), key=lambda x: x[1], reverse=True)
+
+    print(f"Топ {top_n} самых активных пользователей по количеству сообщений:")
+    for i, (user, count) in enumerate(sorted_users[:top_n], start=1):
+        print(f"{i}. Пользователь: {user}, Количество сообщений: {count}")
 
 
 
