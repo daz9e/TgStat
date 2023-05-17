@@ -3,7 +3,7 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 import os
 from webstat.algs import uploaddb
-
+from webstat.algs import get_longest_message
 def upload_file(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
@@ -15,6 +15,7 @@ def upload_file(request):
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
         uploaddb(myfile.name)
+        get_longest_message(myfile.name)
         os.remove(os.path.join(path, filename))
         return render(request, 'upload.html', {
             'uploaded_file_url': uploaded_file_url
