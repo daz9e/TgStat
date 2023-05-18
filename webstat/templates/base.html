@@ -1,14 +1,15 @@
-{% extends 'base2.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block titile %}
+    {% endblock %}
+</head>
+<body>
+  <div>
+      <h1>dsjkdskjdsklj</h1>
+      {% block content %}
+      {% endblock %}
+  </div>
 
-{% block title %}
-    File asdsad
-{% endblock %}
-
-{% block content %}
-    <h2>File Upload</h2>
-    <form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="myfile">
-        <button type="submit">Upload</button>
-    </form>
-{% endblock %}
+</body>
+</html>
