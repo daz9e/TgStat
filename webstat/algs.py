@@ -7,6 +7,8 @@ from django.db import transaction
 from collections import Counter
 import re
 from collections import defaultdict
+import ast
+
 
 def uploaddb(filename):
     path_to_file = os.path.join(settings.BASE_DIR, 'files', filename)
@@ -130,11 +132,20 @@ def get_top_active_users(filename, top_n):
 
     sorted_users = sorted(user_message_counts.items(), key=lambda x: x[1], reverse=True)
 
-    print(f"Топ {top_n} самых активных пользователей по количеству сообщений:")
-    for i, (user, count) in enumerate(sorted_users[:top_n], start=1):
-        print(f"{i}. Пользователь: {user}, Количество сообщений: {count}")
+    return sorted_users
 
 
+def get_chatid(filename):
+    path_to_file = os.path.join(settings.BASE_DIR, 'files', filename)
+    with open(path_to_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    return data.get('name',None)
+
+def get_chatname(filename):
+    path_to_file = os.path.join(settings.BASE_DIR, 'files', filename)
+    with open(path_to_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    return data.get('id',None)
 
 
 
