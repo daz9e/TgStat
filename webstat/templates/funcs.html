@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Algorithms
+{% endblock %}
+
+{% block content %}
+<h1>{{ name }}</h1>
+<h1>{{ active }}</h1>
+<a href="{% url 'longest' %}">
+  <div>
+    Clickable Block Text
+  </div>
+</a>
+
+
+
+{% endblock %}
