@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>File Upload</title>
+    {% block titile %}
+    {% endblock %}
 </head>
 <body>
-    <h2>File Upload</h2>
-    <form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="myfile">
-        <button type="submit">Upload</button>
-    </form>
+  <div>
+      <h1>dsjkdskjdsklj</h1>
+      {% block content %}
+      {% endblock %}
+  </div>
+
 </body>
 </html>
