@@ -5,10 +5,36 @@
 {% endblock %}
 
 {% block content %}
-    <h2>File Upload</h2>
+    <!--<h2>File Upload</h2>
     <form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="file" name="myfile">
         <button type="submit">Upload</button>
-    </form>
+    </form>-->
+    <div class="wrapper _container">
+        <div class="wrapper__text">
+            <h1 class="wrapper__title title">Please upload file here</h1>
+            <h2 class="wrapper__subtitle subtitle">Select relevant documents to complete your kyc</h2>
+        </div>
+        <div class="wrapper__icon">
+            <img src="../static/img/bunny.png" alt="" class="wrapper__icon-img">
+        </div>
+        <div id="dropzone" class="">
+            <div class="area__icon">
+                <img src="img/loading.png" alt="" class="area__icon-img">
+            </div>
+            <div class="area__text__title">drag and drop or enter file path</div>
+            <div class="area__text__subtitle">Разрешение такое-то</div>
+            <input type="text" class="area__input" type="file">
+            <form class="area__form" method="post" enctype="multipart/form-data"> 
+                <input id='input'class='input' type="file" name="myfile" onchange="handleFiles(this.files)">
+            </form>
+        </div> 
+            <ul id="file_list"></ul>
+    
+        <div class="wrapper__buttons buttons">
+            <button class="buttons__cancel button">Cancel</button>
+            <button id="submitBtn" class="buttons__upload button hidden">Upload</button>            
+        </div>
+    </div>
 {% endblock %}

@@ -1,0 +1,294 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-style: 100%;
+  line-height: 1;
+  font-style: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-style: inherit;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Helvetica"; /* Гарнитура шрифта */
+  src: url("../fonts/helvetica_bold.otf") format("truetype"); /* Путь к файлу со шрифтом */
+}
+body {
+  background-color: white;
+  font-family: "Helvetica";
+  color: black;
+  height: 100%;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  color: #777777;
+}
+
+._container {
+  max-width: 1048px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.wrapper .wrapper__text {
+  text-align: center;
+  margin: 70px 0px 40px 0;
+}
+.wrapper .wrapper__text .wrapper__title {
+  margin: 0 0 20px 0;
+}
+.wrapper .wrapper__icon {
+  margin: 10px 0 40px 0;
+}
+.wrapper .wrapper__icon .wrapper__icon-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 90px;
+}
+.wrapper .wrapper__area {
+  border-radius: 10px;
+  flex: 1 1 auto;
+  border: 2px dashed rgba(0, 0, 0, 0.25);
+  height: 400px;
+  max-width: 1048px;
+  position: relative;
+}
+.wrapper .wrapper__area .area__form {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+}
+.wrapper .wrapper__area .area__text .area__text__title {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+.wrapper .wrapper__area .area__text .area__text__subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #777777;
+  margin: 20px 0;
+}
+.wrapper .wrapper__area .area__button {
+  display: block;
+  position: absolute;
+  background-color: white;
+  height: 50px;
+  width: 140px;
+  bottom: 70px;
+  left: 435px;
+  border-radius: 5px;
+  padding: 12px 16px 40px 16px;
+  border: 2px solid #0F91D2;
+  color: #0F91D2;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrapper .wrapper__area .area__button:hover {
+  color: #0F91D2;
+  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1607843137);
+}
+.wrapper .wrapper__area .area__button:active {
+  background-color: rgba(231, 229, 229, 0.1);
+}
+.wrapper .wrapper__buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 30px;
+}
+.wrapper .wrapper__buttons .buttons__cancel {
+  padding: 5px;
+  margin: 0 30px 0 0;
+  border-radius: 10px;
+}
+.wrapper .wrapper__buttons .buttons__cancel:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.wrapper .wrapper__buttons .buttons__cancel:active {
+  background-color: rgb(184, 184, 184);
+}
+.wrapper .wrapper__buttons .buttons__upload {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1607843137);
+}
+.wrapper .wrapper__buttons .buttons__upload:hover {
+  color: #0F91D2;
+  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1607843137);
+}
+.wrapper .wrapper__buttons .buttons__upload:active {
+  background-color: rgba(231, 229, 229, 0.1);
+}
+
+.input {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin-top: -70px;
+  opacity: 0;
+}
+
+.button {
+  height: 60px;
+  width: 140px;
+  display: block;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Helvetica";
+  font-size: 20px;
+}
+
+#dropzone {
+  border: 2px dashed rgba(0, 0, 0, 0.25);
+  height: 400px;
+  max-width: 1048px;
+}
+
+#dropzone:before {
+  content: "Перетащи сюда файл";
+}
+
+#dropzone.hover {
+  border-color: green;
+}
+
+#dropzone.hover:before {
+  content: "Отпускай, ловлю!";
+}
+
+li img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.hidden {
+  pointer-events: none;
+  color: #777777;
+}
+
+.area__icon {
+  margin: 70px 0 50px 0;
+  pointer-events: none;
+}
+.area__icon .area__icon-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.area__text__title {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 0 0 10px 0;
+  pointer-events: none;
+}
+
+.area__text__subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #777777;
+  pointer-events: none;
+}
