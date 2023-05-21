@@ -1,15 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="{% static 'scss/css/style.css' %}" />
     {% block titile %}
     {% endblock %}
 </head>
 <body>
   <div>
-      sahsa lox
+      
       {% block content %}
       {% endblock %}
   </div>
-
+  <script type="text/javascript" src={% static 'js/skript.js' %}></script>
 </body>
 </html>
