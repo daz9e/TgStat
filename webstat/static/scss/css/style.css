@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   src: url("../fonts/helvetica_bold.otf") format("truetype"); /* Путь к файлу со шрифтом */
 }
 body {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   font-family: "Helvetica";
   color: black;
   height: 100%;
@@ -102,10 +102,21 @@ body {
   padding: 0 15px;
 }
 
+.main {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0 0 70px 0;
+}
+
+.gray {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 150px;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  background-color: #fff;
 }
 .wrapper .wrapper__text {
   text-align: center;
@@ -178,11 +189,10 @@ body {
   background-color: rgba(231, 229, 229, 0.1);
 }
 .wrapper .wrapper__buttons {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  margin: 100px 0 0 0;
   background-color: rgba(0, 0, 0, 0.1);
   width: 100%;
+  min-width: 100%;
   height: 150px;
   display: flex;
   justify-content: center;
@@ -198,19 +208,6 @@ body {
 }
 .wrapper .wrapper__buttons .buttons__cancel:active {
   background-color: rgb(184, 184, 184);
-}
-.wrapper .wrapper__buttons .buttons__upload {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 12px;
-  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1607843137);
-}
-.wrapper .wrapper__buttons .buttons__upload:hover {
-  color: #0F91D2;
-  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1607843137);
-}
-.wrapper .wrapper__buttons .buttons__upload:active {
-  background-color: rgba(231, 229, 229, 0.1);
 }
 
 .input {
@@ -255,11 +252,6 @@ li img {
   max-height: 100px;
 }
 
-.hidden {
-  pointer-events: none;
-  color: #777777;
-}
-
 .area__icon {
   margin: 70px 0 50px 0;
   pointer-events: none;
@@ -301,10 +293,8 @@ li img {
   display: block;
   height: 60px;
   width: 140px;
-}
-
-input[type=file] {
-  display: none;
+  pointer-events: none;
+  background-color: #fff;
 }
 
 .preview {
@@ -367,4 +357,46 @@ input[type=file] {
 .preview-info .preview-info-size {
   padding: 10px;
   font-size: 20px;
+}
+
+#dropzone {
+  position: relative;
+}
+
+.form {
+  position: relative;
+}
+
+.aboba {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  color: #0F91D2;
+  padding: 20px;
+  border: 2px solid #d20f1f;
+  padding: 5px;
+  margin: 30px 200px;
+  border-radius: 10px;
+  font-size: 20px;
+  display: block;
+  height: 60px;
+  width: 140px;
+  opacity: 0;
+}
+
+.buttons__upload {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1607843137);
+  position: absolute;
+  bottom: -150px;
+  left: 200px;
+}
+.buttons__upload:hover {
+  color: #0F91D2;
+  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1607843137);
+}
+.buttons__upload:active {
+  background-color: rgba(231, 229, 229, 0.1);
 }
