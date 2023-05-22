@@ -5,7 +5,7 @@ import os
 from webstat.algs import uploaddb
 from webstat.algs import get_longest_message
 from webstat.algs import get_top_words
-from webstat.algs import get_top_active_users
+from webstat.algs import get_top_active_users,top_media
 def upload_file(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
@@ -20,6 +20,7 @@ def upload_file(request):
         get_longest_message(myfile.name)
         get_top_words(myfile.name,top_n=25)
         get_top_active_users(myfile.name,top_n=5)
+        top_media(myfile.name,top_n=5)
         os.remove(os.path.join(path, filename))
         return render(request, 'upload.html', {
             'uploaded_file_url': uploaded_file_url
