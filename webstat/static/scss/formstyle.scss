@@ -1,0 +1,90 @@
+$blue: #0F91D2;
+$grey: #777777;
+.input {
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	margin-top: -70px;
+	opacity: 0;
+}
+.button {
+	height: 60px;
+	width: 140px;
+	display: block;
+	border: none;
+ 	font: inherit;
+ 	color: inherit;
+ 	background-color: transparent;
+  	cursor: pointer;
+	font-family: "Helvetica";
+	font-size: 20px;
+	
+}
+
+
+  .hidden{
+	pointer-events: none;
+	color: $grey;
+	display: none;
+  }
+ 
+
+.btn {
+	color: #0F91D2;
+	padding: 20px;
+	border: 2px solid #0F91D2;
+	position: absolute;
+	bottom: 32%;
+	left: 43%;
+	border-radius: 10px;
+	font-size: 20px;
+	display: block;
+	height: 60px;
+	width: 140px;
+	pointer-events: none;
+	background-color: #fff;
+	&:hover {
+		background-color: #777777;
+	}
+}
+input[type=file] {
+	//display: none;
+}
+
+
+.form {
+	position: relative;
+}
+.aboba {
+	padding:5px;
+	margin: 0 auto;
+	border-radius: 10px;
+	font-size: 20px;
+	display: block;
+	height: 60px;
+	width: 140px;
+	opacity: 0;
+
+}
+.buttons__upload {
+	background-color: #fff;
+	border-radius: 10px;
+	padding:12px;
+	margin: 20px 0 0 0;
+	margin: 0 auto;
+	box-shadow: 0px 2px 1px 0px #00000029;
+	&:hover {
+		color: $blue;
+	}
+	&:active {
+		background-color: rgba(231, 229, 229, 0.1);
+	}
+}
+.air {
+	height: 30px;
+  }
+#upload {
+	width: 100%;
+	position: relative;
+}
