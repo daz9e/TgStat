@@ -21,17 +21,17 @@
         </div>
         <div id="dropzone" class="">
             <div class="area__icon">
-                <img src="img/loading.png" alt="" class="area__icon-img">
+                <img src="../static/img/loading.png" alt="" class="area__icon-img">
             </div>
             <div class="area__text__title">drag and drop or enter file path</div>
             <div class="area__text__subtitle">Разрешение такое-то</div>
-            <input type="text" class="area__input" type="file">
-            <form class="area__form" method="post" enctype="multipart/form-data"> 
-                <input id='input'class='input' type="file" name="myfile" onchange="handleFiles(this.files)">
-            </form>
+            <!--<input type="text" class="area__input" type="file">-->
+            
+            <input type="file" id='file'class='area__input' >
+            
         </div> 
             <ul id="file_list"></ul>
-    
+            
         <div class="wrapper__buttons buttons">
             <button class="buttons__cancel button">Cancel</button>
             <button id="submitBtn" class="buttons__upload button hidden">Upload</button>            
