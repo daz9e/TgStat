@@ -239,18 +239,15 @@ body {
   border: 2px dashed rgba(0, 0, 0, 0.25);
   height: 400px;
   max-width: 1048px;
-}
-
-#dropzone:before {
-  content: "Перетащи сюда файл";
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #dropzone.hover {
   border-color: green;
-}
-
-#dropzone.hover:before {
-  content: "Отпускай, ловлю!";
 }
 
 li img {
@@ -291,4 +288,83 @@ li img {
   text-align: center;
   color: #777777;
   pointer-events: none;
+}
+
+.btn {
+  color: #0F91D2;
+  padding: 20px;
+  border: 2px solid #0F91D2;
+  padding: 5px;
+  margin: 30px 200px;
+  border-radius: 10px;
+  font-size: 20px;
+  display: block;
+  height: 60px;
+  width: 140px;
+}
+
+input[type=file] {
+  display: none;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.9rem;
+}
+
+.preview-image {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(219, 218, 218, 0.7058823529);
+  border-radius: 10px;
+}
+
+.preview-image:hover .preview-remove {
+  opacity: 1;
+}
+
+.preview-image img {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.preview-remove {
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.22s;
+}
+
+.preview-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.preview-info .preview-info-name {
+  padding: 10px;
+  font-size: 20px;
+}
+.preview-info .preview-info-size {
+  padding: 10px;
+  font-size: 20px;
 }
