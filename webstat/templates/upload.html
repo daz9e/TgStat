@@ -5,12 +5,9 @@
 {% endblock %}
 
 {% block content %}
-    <!--<h2>File Upload</h2>
-    <form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="myfile">
-        <button type="submit">Upload</button>
-    </form>-->
+
+   <div class="main">
+
     <div class="wrapper _container">
         <div class="wrapper__text">
             <h1 class="wrapper__title title">Please upload file here</h1>
@@ -27,14 +24,26 @@
             <div class="area__text__subtitle">Разрешение такое-то</div>
             <!--<input type="text" class="area__input" type="file">-->
             
-            <input type="file" id='file'class='area__input' >
+            <!--<form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data"></form>
+            {% csrf_token %}
+            <input name="myfile" type="file" id='file'class='area__input' >
+            <button type="submit">Upload</button>
+        </form>-->
+        <form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data" class="form">
+            {% csrf_token %}
+            <input type="file" name="myfile" name="docfile" id='file' class="button aboba">
+            <button type="submit" class="buttons__upload button hidden">Upload</button>
+        </form>
             
         </div> 
             <ul id="file_list"></ul>
-            
+        </div> 
+    </div>
+</div>
+    <div class="gray">
         <div class="wrapper__buttons buttons">
-            <button class="buttons__cancel button">Cancel</button>
-            <button id="submitBtn" class="buttons__upload button hidden">Upload</button>            
+            <!--<button class="buttons__cancel button">Cancel</button>          -->
         </div>
     </div>
+
 {% endblock %}
