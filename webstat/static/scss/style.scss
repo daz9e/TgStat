@@ -1,10 +1,14 @@
 @import "nullstyle.scss";
+@import "titlestyle.scss";
+@import "dropzone.scss";
+@import "previewstyle.scss";
+@import "formstyle.scss";
 
 $blue: #0F91D2;
 $grey: #777777;
 @font-face {
 	font-family: "Helvetica"; /* Гарнитура шрифта */
-	src: url("../fonts/helvetica_bold.otf") format("truetype"); /* Путь к файлу со шрифтом */
+	src: url("../fonts/helvetica_regular.otf") format("truetype"); /* Путь к файлу со шрифтом */
 }
 
 body{
@@ -12,21 +16,6 @@ body{
 	font-family: "Helvetica";
 	color: black;
 	height: 100%;
-}
-
-.title{
-	font-size: 30px;
-	font-weight: 400;
-	line-height: 23px;
-	letter-spacing: 0em;
-	
-}
-.subtitle{
-	font-size: 20px;
-	font-weight: 400;
-	line-height: 15px;
-	letter-spacing: 0em;
-	color: $grey;
 }
 
 ._container{
@@ -56,6 +45,7 @@ body{
 		}
 	}
 	.wrapper__icon {
+		margin: 10px 0 40px 0;
 		.wrapper__icon-img{
 			display: block;
 			margin-left: auto;
@@ -63,295 +53,26 @@ body{
 			height: 90px;
 			width: 90px;
 		}
-		margin: 10px 0 40px 0;
 	}
 	.wrapper__area{
-		
-		border-radius: 10px;
-		flex: 1 1 auto;
-		border: 2px dashed rgba(0, 0, 0, 0.25);
-		height: 400px;
-		max-width: 1048px;
-		position: relative;
-		.area__form {
-			display: block;
-			max-height: 100%;
-			max-width: 100%;
-		
+		.area__icon{
+			margin: 20px 0 20px 0;
+			pointer-events: none;
 		}
-		.area__text{
 			.area__text__title{
 				font-size: 25px;
-				font-weight: 400;
-				line-height: 18px;
-				letter-spacing: 0em;
 				text-align: center;
 				margin: 0 0 10px 0;
 			}
 			.area__text__subtitle{
 				font-size: 18px;
-				font-weight: 400;
-				line-height: 18px;
-				letter-spacing: 0em;
 				text-align: center;
 				color: $grey;
-				margin: 20px 0;
+				margin: 10px 0;
 			}
-		}
-		.area__button{
-			display: block;
-			position: absolute;
-			background-color: white;
-			height: 50px;
-			width: 140px;
-			bottom: 70px;
-			left: 435px;
-			border-radius: 5px;
-			padding: 12px 16px 40px 16px;
-			border:
-			2px solid $blue; 
-			color: $blue;
-			font-size: 20px;
-			margin-left: auto;
-			margin-right: auto;
-			&:hover {
-				color: $blue;
-				box-shadow: 0px 0px 10px 4px #00000029;
-			}
-			&:active {
-				background-color: rgba(231, 229, 229, 0.1);
-			}
-		}
-	}
-	.wrapper__buttons{
-		margin: 100px 0 0 0;
-		background-color:rgba(0, 0, 0, 0.1);
-		width: 100%;
-		min-width: 100%;
-		height: 150px;
-		display: flex;
-		justify-content: center;
-		padding: 20px 0 30px;
-		.buttons__cancel {
-			padding:5px;
-			margin: 0 30px 0 0;
-			border-radius: 10px;
-			&:hover {
-				background-color: rgba(0, 0, 0, 0.1);
-			}
-			&:active {
-				background-color: rgb(184, 184, 184);
-			}
-		}
-	
 	}
 }
 
-.area__form {
-	
-}
-.input {
-	display: block;
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	margin-top: -70px;
-	opacity: 0;
-}
-.button {
-	height: 60px;
-	width: 140px;
-	display: block;
-	border: none;
- 	font: inherit;
- 	color: inherit;
- 	background-color: transparent;
-  	cursor: pointer;
-	font-family: "Helvetica";
-	font-size: 20px;
-	
-}
 
-#dropzone {
 
-	border: 2px dashed rgba(0, 0, 0, 0.25);
-		height: 400px;
-		max-width: 1048px;
-		border-radius: 10px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-  }
-  #dropzone:before{
-	//content: "Перетащи сюда файл";
-  }
-  
-  #dropzone.hover{
-	border-color: green;
-  }
-  #dropzone.hover:before{
-	//content: "Отпускай, ловлю!";
-  }
-  
-  li img{
-	max-width: 100px;
-	max-height: 100px;
-  }
-//  .hidden{
-//	pointer-events: none;
-//	color: $grey;
-//  }
-  .area__icon{
-	margin: 70px 0 50px 0;
-	pointer-events: none;
-	.area__icon-img{
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		
-	}
-}
-	.area__text__title{
-		font-size: 25px;
-		font-weight: 400;
-		line-height: 18px;
-		letter-spacing: 0em;
-		text-align: center;
-		margin: 0 0 10px 0;
-		pointer-events: none;
 
-	}
-	.area__text__subtitle{
-		font-size: 18px;
-		font-weight: 400;
-		line-height: 18px;
-		letter-spacing: 0em;
-		text-align: center;
-		color: $grey;
-		pointer-events: none;
-	}
-.btn {
-	color: #0F91D2;
-	padding: 20px;
-	border: 2px solid #0F91D2;
-	padding:5px;
-	margin: 30px 200px;
-	border-radius: 10px;
-	font-size: 20px;
-	display: block;
-	height: 60px;
-	width: 140px;
-	pointer-events: none;
-	background-color: #fff;
-}
-input[type=file] {
-	//display: none;
-}
-.preview {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	padding: .9rem;
-}
-.preview-image {
-	width: 100%;
-	margin-bottom: .5rem;
-	margin-right: .5rem;
-	position: relative;
-	display: flex;
-	justify-content: space-between;
-	background-color: #dbdadab4;
-	border-radius: 10px;
-}
-.preview-image:hover .preview-remove {
-	opacity: 1;
-}
-.preview-image img {
-	width: 100px;
-	height: auto;
-	border-radius: 10px;
-	margin: 10px;
-}
-.preview-remove {
-	opacity: 0;
-	width: 20px;
-	height: 20px;
-	position: absolute;
-	right: 0;
-	top: 0;
-	font-weight: bold;
-	background: rgba($color: #ffffff, $alpha: 0.5);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	transition: opacity .22s;
-}
-.preview-info {
-	//position: absolute;
-	//right: 0;
-	//bottom: 0;
-	//left: 0;
-	//height: 25px;
-	//font-sizet: .8rem;
-	//background: rgba($color: #ffffff, $alpha: 0.5);
-	//display: flex;
-	//align-items: center;
-	//justify-content: space-between;
-	//padding: 0.5px;
-	//transition: opacity .22s;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	padding: 20px;
-	.preview-info-name {
-		padding: 10px;
-		font-size: 20px;
-	}
-	.preview-info-size {
-		padding: 10px;
-		font-size: 20px;
-	}
-}
-
-#dropzone {
-	position: relative;
-}
-.form {
-	position: relative;
-}
-.aboba {
-	position: absolute;
-	left: 0;
-	bottom: 0px;
-	color: #0F91D2;
-	padding: 20px;
-	border: 2px solid #d20f1f;
-	padding:5px;
-	margin: 30px 200px;
-	border-radius: 10px;
-	font-size: 20px;
-	display: block;
-	height: 60px;
-	width: 140px;
-	opacity: 0;
-}
-.buttons__upload {
-	background-color: #fff;
-	border-radius: 10px;
-	padding:12px;
-	box-shadow: 0px 2px 1px 0px #00000029;
-	position: absolute;
-	bottom: -150px;
-	left: 200px;
-	&:hover {
-		color: $blue;
-		box-shadow: 0px 0px 10px 4px #00000029;
-	}
-	&:active {
-		background-color: rgba(231, 229, 229, 0.1);
-	}
-}

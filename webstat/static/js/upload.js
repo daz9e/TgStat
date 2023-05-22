@@ -49,13 +49,25 @@ export function upload(selektor, options = {}) {
 							const title = document.querySelector('.area__text__title') //удаление лишнего
 							const subtitle = document.querySelector('.area__text__subtitle')
 							const image = document.querySelector('.area__icon')
+							const open = document.querySelector('.btn')
+							const open2 = document.querySelector('.aboba')
 							const parent1 = title.parentNode
 							const parent2 = subtitle.parentNode
 							const parent3 = image.parentNode
+							const parent4 = open.parentNode
+							const parent5 = open2.parentNode
+
+	
 
 							parent1.removeChild(title)
 							parent2.removeChild(subtitle)
 							parent3.removeChild(image)
+							parent4.removeChild(open)
+							//parent5.removeChild(open2)
+
+							let button = document.querySelector('.hidden')
+							button.classList.remove('hidden')
+							
 			reader.onload = ev => {
 				//const src = ev.target.result
 				//console.log(ev.target.result)  //получаем код картинки
