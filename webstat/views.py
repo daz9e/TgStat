@@ -28,6 +28,8 @@ def upload_file(request):
         os.remove(os.path.join(path, filename))
         return render(request, 'funcs.html', {
             "chatid": chatid,
+            "active": active,
+            "name": chatname
         })
 
     return render(request, 'test.html')
