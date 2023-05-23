@@ -99,5 +99,28 @@ body{
 //  box-shadow: 0 4px 15px 0 rgba(72, 83, 97, 0.75);
 background-color: #fff;
 }
+.gray {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.gray__button {
+	display: block;
+	min-width: 1000px;
+	height: 70px;
+	background-color: #fff;
+	border-radius: 10px;
+	padding:12px;
+	margin: 0 auto;
+	box-shadow: 0px 2px 1px 0px #00000029;
+	font-size: 20px;
+	&:hover {
+		color: $blue;
+	}
+	&:active {
+		background-color: rgba(231, 229, 229, 0.1);
+}
+}
 
 
