@@ -1,0 +1,328 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-style: 100%;
+  line-height: 1;
+  font-style: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-style: inherit;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Helvetica"; /* Гарнитура шрифта */
+  src: url("../fonts/helvetica_regular.otf") format("truetype"); /* Путь к файлу со шрифтом */
+}
+.title {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  color: #777777;
+}
+
+.area__text {
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  pointer-events: none;
+}
+
+#dropzone {
+  border: 2px dashed rgba(0, 0, 0, 0.25);
+  height: 400px;
+  max-width: 1048px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#dropzone.hover {
+  border-color: green;
+}
+
+#dropzone {
+  position: relative;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.9rem;
+}
+
+.preview-image {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(219, 218, 218, 0.7058823529);
+  border-radius: 10px;
+}
+
+.preview-image:hover .preview-remove {
+  opacity: 1;
+}
+
+.preview-image img {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.preview-remove {
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.22s;
+}
+
+.preview-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.preview-info .preview-info-name {
+  padding: 10px;
+  font-size: 20px;
+}
+.preview-info .preview-info-size {
+  padding: 10px;
+  font-size: 17px;
+}
+
+.input {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin-top: -70px;
+  opacity: 0;
+}
+
+.button {
+  height: 60px;
+  width: 140px;
+  display: block;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Helvetica";
+  font-size: 20px;
+}
+
+.hidden {
+  pointer-events: none;
+  color: #777777;
+  display: none;
+}
+
+.btn {
+  color: #0F91D2;
+  padding: 20px;
+  border: 2px solid #0F91D2;
+  position: absolute;
+  bottom: 32%;
+  left: 43%;
+  border-radius: 10px;
+  font-size: 20px;
+  display: block;
+  height: 60px;
+  width: 140px;
+  pointer-events: none;
+  background-color: #fff;
+}
+.btn:hover {
+  background-color: #777777;
+}
+
+.form {
+  position: relative;
+}
+
+.aboba {
+  padding: 5px;
+  margin: 0 auto;
+  border-radius: 10px;
+  font-size: 20px;
+  display: block;
+  height: 60px;
+  width: 140px;
+  opacity: 0;
+}
+
+.buttons__upload {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 20px 0 0 0;
+  margin: 0 auto;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1607843137);
+}
+.buttons__upload:hover {
+  color: #0F91D2;
+}
+.buttons__upload:active {
+  background-color: rgba(231, 229, 229, 0.1);
+}
+
+.air {
+  height: 30px;
+}
+
+#upload {
+  width: 100%;
+  position: relative;
+}
+
+@font-face {
+  font-family: "Helvetica"; /* Гарнитура шрифта */
+  src: url("../fonts/helvetica_regular.otf") format("truetype"); /* Путь к файлу со шрифтом */
+}
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: "Helvetica";
+  color: black;
+  height: 100%;
+}
+
+._container {
+  max-width: 1048px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.main {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0 0 70px 0;
+}
+
+.gray {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 150px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: #fff;
+}
+.wrapper .wrapper__text {
+  text-align: center;
+  margin: 70px 0px 40px 0;
+}
+.wrapper .wrapper__text .wrapper__title {
+  margin: 0 0 20px 0;
+}
+.wrapper .wrapper__icon {
+  margin: 10px 0 40px 0;
+}
+.wrapper .wrapper__icon .wrapper__icon-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 90px;
+}
+.wrapper .wrapper__area .area__icon {
+  margin: 20px 0 20px 0;
+  pointer-events: none;
+}
+.wrapper .wrapper__area .area__text__title {
+  font-size: 25px;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+.wrapper .wrapper__area .area__text__subtitle {
+  font-size: 18px;
+  text-align: center;
+  color: #777777;
+  margin: 10px 0;
+}
