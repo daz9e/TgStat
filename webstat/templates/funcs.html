@@ -20,15 +20,15 @@
   </div>
   <div class="wrapper__area2">
 
-    <a href="{% url 'longest' %}?chatid={{ chatid }}">
+    <a href="{% url 'longest' %}?file={{ file }}">
       <button class="area2__button">Самые длинные сообщения</button>
     </a>
 
-    <a href="{% url 'frequent_words' %}?chatid={{ chatid }}">
+    <a href="{% url 'frequent_words' %}?file={{ file }}">
       <button class="area2__button">Частые слова</button>
     </a>
 
-    <a href="{% url 'active_users' %}?chatid={{ chatid }}">
+    <a href="{% url 'active_users' %}?file={{ file }}">
       <button class="area2__button">Самые активные пользователи</button>
     </a>
 

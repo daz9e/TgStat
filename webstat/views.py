@@ -21,23 +21,30 @@ def upload_file(request):
         uploaded_file_url = fs.url(filename)
         uploaddb(myfile.name)
         get_longest_message(myfile.name)
-        get_top_words(myfile.name,top_n=25)
-        active = get_top_active_users(myfile.name,top_n=5)
+        get_top_words(myfile.name, top_n=25)
+        active = get_top_active_users(myfile.name, top_n=5)
         chatid = get_chatid(myfile.name)
         chatname = get_chatname(myfile.name)
         os.remove(os.path.join(path, filename))
         return render(request, 'funcs.html', {
-            "chatid": chatid,
-            "active": active,
+            "file": myfile.name,
             "name": chatname
         })
-
-    return render(request, 'test.html')
-
+    return HttpResponse("Invalid request")
 def home(request):
     return render(request, 'upload.html')
 
 def longest(request):
-    name = request.GET.get('chatid')
+    file = request.GET.get('file')
+    data = get_longest_message(file)
+    return render(request, 'longest.html', {'data': data})
 
-    return render(request, 'longest.html', {'ch': name})
+def frequent_words(request):
+    file = request.GET.get('file')
+    data = get_longest_message(file)
+    return render(request, 'frequent_words.html', {'data': data})
+
+def active_user(request):
+    file = request.GET.get('file')
+    data = get_longest_message(file)
+    return render(request, 'active_user.html', {'data': data})
