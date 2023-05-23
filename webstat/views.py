@@ -5,7 +5,7 @@ import os
 from webstat.algs import uploaddb
 from webstat.algs import get_longest_message
 from webstat.algs import get_top_words
-from webstat.algs import get_top_active_users,  get_chatid,get_chatname
+from webstat.algs import get_top_active_users,  get_chatid, get_chatname , get_longest_message
 import re
 
 
@@ -37,5 +37,7 @@ def upload_file(request):
 def home(request):
     return render(request, 'upload.html')
 
-def home(request):
-    return render(request, 'upload.html')
+def longest(request):
+    name = request.GET.get('chatid')
+
+    return render(request, 'longest.html', {'ch': name})

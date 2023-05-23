@@ -145,7 +145,7 @@ def get_chatname(filename):
     path_to_file = os.path.join(settings.BASE_DIR, 'files', filename)
     with open(path_to_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
-    return data.get('id',None)
+    return data.get('name',None)
 
 
 
