@@ -500,6 +500,56 @@ HTML CSSResult Skip Results Iframe EDIT ON .custom-btn {
   box-shadow: 0 4px 15px 0 rgba(72, 83, 97, 0.75);
 }
 
+.header {
+  background: rgb(255, 255, 255);
+  grid-area: header;
+  padding: 15px;
+  margin: 0 0 20px 0;
+}
+.header .header__list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template: 1fr/minmax(auto, 100px) minmax(auto, 1100px) 1fr;
+  justify-items: start;
+}
+.header .header__list .header__link {
+  color: inherit;
+  text-decoration: none;
+  color: #0F91D2;
+  font-size: 18px;
+}
+
+.spisok {
+  background: rgb(255, 255, 255);
+  grid-area: header;
+  color: black;
+  padding: 15px;
+}
+.spisok .count {
+  margin: 0 0 15px 20px;
+}
+.spisok .kol {
+  margin: 0 0 15px 50px;
+}
+.spisok .message {
+  margin: 0 0 15px 5px;
+}
+.spisok .spisok__list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template: 1fr/minmax(auto, 100px) minmax(auto, 1100px) minmax(auto, 100px);
+  justify-items: start;
+}
+.spisok .spisok__list .spisok__link {
+  font-size: 18px;
+}
+
+body::first-child {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 @font-face {
   font-family: "Helvetica"; /* Гарнитура шрифта */
   src: url("../fonts/helvetica_regular.otf") format("truetype"); /* Путь к файлу со шрифтом */
@@ -530,8 +580,8 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
   background-color: #fff;
+  padding: 0 0 70px 0;
 }
 .wrapper .wrapper__text {
   text-align: center;
@@ -588,29 +638,4 @@ body {
   border-radius: 10px;
   font-size: 20px;
   background-color: #fff;
-}
-
-.gray {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.gray__button {
-  display: block;
-  min-width: 1000px;
-  height: 70px;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 12px;
-  margin: 0 auto;
-  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1607843137);
-  font-size: 20px;
-}
-.gray__button:hover {
-  color: #0F91D2;
-}
-.gray__button:active {
-  background-color: rgba(231, 229, 229, 0.1);
 }

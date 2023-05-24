@@ -75,7 +75,7 @@ export function upload(selektor, options = {}) {
 				preview.insertAdjacentHTML('afterbegin', `
 					<div class="preview-image">
 					<div class="preview-remove" data-name="${file.name}">&times;</div>  
-						<img src="./static/img/1.jpg" alt="${file.name}" />
+						<img src="./static/img/2.jpg" alt="${file.name}" />
 							<div class="preview-info">
 								<div class="preview-info-name">Name: ${file.name}</div>
 								<div class="preview-info-size">Size: ${formatBytes(file.size)}</div>

@@ -5,6 +5,44 @@
 {% endblock %}
 
 {% block content %}
-    <h2>File Uploaded Successfully!</h2>
-    <p>Uploaded File URL: {{ uploaded_file_url }}</p>
+    <!--<h2>File Uploaded Successfully!</h2>
+    <p>Uploaded File URL: {{ uploaded_file_url }}</p>-->
+<div class="wrapper _container">
+    <div class="wrapper__text">
+        <h1 class="wrapper__title title">Filename</h1>
+        <h2 class="wrapper__subtitle subtitle"> top 25 most common words</h2>
+    </div>
+    <div class="wrapper__icon">
+        <img src="../static/img/bunny.png" alt="" class="wrapper__icon-img">
+    </div>
+    <header class="header">
+        <ul class="header__list">
+            <li>
+                <div class="header__link">Number</div>
+            </li>
+            <li>
+                <div class="header__link">Message</div>
+            </li>
+            <li>
+                <div class="header__link">Quantity</div>
+            </li>
+        </ul>
+    </header>
+    <header class="spisok">
+        <ul class="spisok__list">
+            <li>
+                <div class="spisok__link count">1</div>
+            </li>
+            <li>
+                <div class="spisok__link message">я</div>
+            </li>
+            <li>
+                <div class="spisok__link kol">63</div>
+            </li>
+        </ul>
+    </header>
+</div>
+
+<div class="gray">
+</div>
 {% endblock %}

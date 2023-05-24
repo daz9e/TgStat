@@ -1,0 +1,43 @@
+.header {
+  background: rgb(255, 255, 255);
+  grid-area: header;
+  padding: 15px;
+  margin: 0 0 20px 0;
+}
+.header .header__list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template: 1fr/minmax(auto, 100px) minmax(auto, 1100px) 1fr;
+  justify-items: start;
+}
+.header .header__list .header__link {
+  color: inherit;
+  text-decoration: none;
+  color: #0F91D2;
+  font-size: 18px;
+}
+
+.spisok {
+  background: rgb(255, 255, 255);
+  grid-area: header;
+  color: black;
+  padding: 15px;
+}
+.spisok .count {
+  margin: 0 0 15px 20px;
+}
+.spisok .kol {
+  margin: 0 0 15px 50px;
+}
+.spisok .message {
+  margin: 0 0 15px 5px;
+}
+.spisok .spisok__list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template: 1fr/minmax(auto, 100px) minmax(auto, 1100px) minmax(auto, 100px);
+  justify-items: start;
+}
+.spisok .spisok__list .spisok__link {
+  font-size: 18px;
+}
