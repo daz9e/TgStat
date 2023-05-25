@@ -98,14 +98,16 @@ h1, h2, h3, h4, h5, h6 {
 
 #dropzone {
   border: 2px dashed rgba(0, 0, 0, 0.25);
-  height: 400px;
+  height: 1024px; /* Increase the height to create more space */
   max-width: 1048px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 20px; /* Add some margin to create space below */
 }
+
 
 #dropzone.hover {
   border-color: green;

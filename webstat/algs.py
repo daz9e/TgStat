@@ -7,7 +7,7 @@ from django.db import transaction
 from collections import Counter
 import re
 from collections import defaultdict
-import ast
+from django.utils.timezone import make_aware
 
 
 def uploaddb(filename):
@@ -17,10 +17,13 @@ def uploaddb(filename):
 
     with transaction.atomic():
         for message in data['messages']:
+            date_str = message.get("date")
+            date = datetime.strptime(date_str, "%Y-%m-%dT%H:%M:%S")
+
             chat, _ = Chat.objects.get_or_create(
                 chat_id=data.get('id', None),
                 name_chat=data.get('name', None),
-                date_load=datetime.now()
+                date_load=make_aware(date)
             )
 
             from_id = None
@@ -39,7 +42,7 @@ def uploaddb(filename):
             message_type = message.get('type', None)
             if message_type in ['message', 'channel_message']:
                 Messages.objects.create(
-                    date=datetime.strptime(message.get('date'), '%Y-%m-%dT%H:%M:%S'),
+                    date=make_aware(date),
                     chat_id=chat,
                     text=message.get('text', ''),
                     stiker=message.get('stiker_emoji', None),
@@ -86,11 +89,12 @@ def get_longest_message(filename):
     sorted_users = sorted(user_messages.items(), key=lambda x: x[1]['message_length'], reverse=True)
 
     # Вывод самых длинных сообщений для 10 пользователей с нумерацией
-    print("Список пользователей с самыми длинными сообщениями:")
+    result = []
     for i, (user, message_info) in enumerate(sorted_users[:10], start=1):
-        print(f"{i}. {user}: {message_info['longest_message']} (длина сообщения: {message_info['message_length']})")
-        print(' ')
-    return user_messages
+        formatted_string = f"{i}. {user}: {message_info['longest_message']} (длина сообщения: {message_info['message_length']})"
+        result.append(formatted_string)
+
+    return result
 
 
 
@@ -113,11 +117,14 @@ def get_top_words(filename,top_n):
     word_counts = Counter(all_words)
     top_words = word_counts.most_common(top_n)
 
-    print(f"Топ {top_n} наиболее часто встречающихся слов:")
+    result = []
     for i, (word, count) in enumerate(top_words, start=1):
-        print(f"{i}. Слово: {word}, Количество: {count}")
+        formatted_string = f"{i}. Word: {word}, Count: {count}"
+        result += "\n"
+        result.append(formatted_string)
 
-def get_top_active_users(filename, top_n):
+    return result
+def get_top_active_users(filename,top_n):
     path_to_file = os.path.join(settings.BASE_DIR, 'files', filename)
     with open(path_to_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -128,11 +135,18 @@ def get_top_active_users(filename, top_n):
     for message in messages:
         if isinstance(message, dict) and 'from' in message:
             user = message['from']
-            user_message_counts[user] += 1
+            if user in user_message_counts:
+                user_message_counts[user] += 1
+            else:
+                user_message_counts[user] = 1
 
     sorted_users = sorted(user_message_counts.items(), key=lambda x: x[1], reverse=True)
+    formatted_output = []
+    for i, (user, count) in enumerate(sorted_users[:top_n], start=1):
+        formatted_output.append(f"{i}. Пользователь: {user}, Количество сообщений: {count}")
 
-    return sorted_users
+    return formatted_output
+
 
 
 def get_chatid(filename):

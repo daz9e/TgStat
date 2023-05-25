@@ -16,20 +16,35 @@
         <div class="wrapper__icon">
             <img src="../static/img/bunny.png" alt="" class="wrapper__icon-img">
         </div>
-        <div id="dropzone" class="wrapper__area area">
-            
-        </div> 
-            <ul id="file_list"></ul>
-        </div> 
+<div id="dropzone" class="wrapper__area area">
+<p>Longest Messages:</p>
+
+{% for message in longest %}
+    <p>{{ i }} {{ message }} (длина сообщения: {{ message|length }})</p>
+{% endfor %}
+
+
+    <p>Top Words:</p>
+    {% for word in words %}
+        <p>{{ word }}</p>
+    {% endfor %}
+    <p>Top Active Users:</p>
+    {% for user in active %}
+        <p>{{ user }}</p>
+    {% endfor %}
+    <p>Chat ID: {{ chatid|safe }}</p>
+</div>
+
+        <ul id="file_list"></ul>
     </div>
 </div>
-    <div class="gray">
-        <div class="wrapper__buttons buttons _container">
-            <div class="air"></div>
-       
+<div class="gray">
+    <div class="wrapper__buttons buttons _container">
+        <div class="air"></div>
 
-            <!--<button class="buttons__cancel button">Cancel</button>          -->
-        </div>
+
+        <!--<button class="buttons__cancel button">Cancel</button>          -->
     </div>
+</div>
 
 {% endblock %}

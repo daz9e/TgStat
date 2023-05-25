@@ -20,14 +20,17 @@ def result(request):
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
         uploaddb(myfile.name)
-        get_longest_message(myfile.name)
-        get_top_words(myfile.name,top_n=25)
+        longest = get_longest_message(myfile.name)
+        words = get_top_words(myfile.name,top_n=25)
         active = get_top_active_users(myfile.name,top_n=5)
         chatid = get_chatid(myfile.name)
         chatname = get_chatname(myfile.name)
         os.remove(os.path.join(path, filename))
         return render(request, 'result.html', {
             "chatid": chatid,
+            "longest": longest,
+            "words": words,
+            "active": active
         })
 
     return render(request, 'test.html')
