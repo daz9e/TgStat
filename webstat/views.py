@@ -9,7 +9,7 @@ from webstat.algs import get_top_active_users,  get_chatid,get_chatname
 import re
 
 
-def upload_file(request):
+def result(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
         folder_name = 'files'
@@ -26,14 +26,11 @@ def upload_file(request):
         chatid = get_chatid(myfile.name)
         chatname = get_chatname(myfile.name)
         os.remove(os.path.join(path, filename))
-        return render(request, 'funcs.html', {
+        return render(request, 'result.html', {
             "chatid": chatid,
         })
 
     return render(request, 'test.html')
-
-def home(request):
-    return render(request, 'upload.html')
 
 def home(request):
     return render(request, 'upload.html')

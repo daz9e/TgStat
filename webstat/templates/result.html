@@ -17,17 +17,6 @@
             <img src="../static/img/bunny.png" alt="" class="wrapper__icon-img">
         </div>
         <div id="dropzone" class="wrapper__area area">
-            <div class="area__icon">
-                <img src="../static/img/loading.png" alt="" class="area__icon-img">
-            </div>
-            <div class="area__text__title area__text">Drag and drop or enter file path</div>
-            <div class="area__text__subtitle area__text">Разрешение такое-то</div>
-        <form id ="upload" action="{% url 'result' %}" method="post" enctype="multipart/form-data" class="form">
-            {% csrf_token %}
-            <input type="file" name="myfile" name="docfile" id='file' class="button aboba">
-            <button form="upload" type="submit" class="buttons__upload button hidden">Upload</button>
-            
-        </form>
             
         </div> 
             <ul id="file_list"></ul>
